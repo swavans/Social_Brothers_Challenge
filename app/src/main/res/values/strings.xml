@@ -85,4 +85,7 @@
     <string name="name_of_card">Set the name</string>
     <string name="surname_of_card">Set the Surname</string>
     <string name="phone_of_card">Set the Phonenumber</string>
+    <string name="fake_name">Admini</string>
+    <string name="fake_surname">de Beta Tester</string>
+    <string name="fake_phone">+31612345678</string>
 </resources>

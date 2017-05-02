@@ -1,7 +1,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
-        android:defaultValue="Admini"
+        android:defaultValue="@string/fake_name"
         android:inputType="textPersonName"
         android:key="name_of_cards"
         android:maxLines="1"
@@ -10,7 +10,7 @@
         android:title="@string/name_of_card" />
 
     <EditTextPreference
-        android:defaultValue="de Beta Tester"
+        android:defaultValue="@string/fake_surname"
         android:inputType="text"
         android:key="surname_of_cards"
         android:maxLines="1"
@@ -19,7 +19,7 @@
         android:title="@string/surname_of_card" />
 
     <EditTextPreference
-        android:defaultValue="+31612345678"
+        android:defaultValue="@string/fake_phone"
         android:inputType="textPersonName"
         android:key="phone_of_cards"
         android:maxLines="1"
