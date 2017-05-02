@@ -1,9 +1,48 @@
 package com.developer.sascha.social_brothers_challenge.data;
 
-/**
- * Created by Sascha on 2-5-2017.
- */
+import android.graphics.Bitmap;
 
 public class Person {
-    String name, surname;
+    private String name, surname, phone;
+    private Bitmap image;
+
+    public Person(String name, String surname, String phone, Bitmap image) {
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.image = image;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
 }

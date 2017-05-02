@@ -1,0 +1,47 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="Admini"
+        android:inputType="textPersonName"
+        android:key="name_of_cards"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/name_of_card" />
+
+    <EditTextPreference
+        android:defaultValue="de Beta Tester"
+        android:inputType="text"
+        android:key="surname_of_cards"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/surname_of_card" />
+
+    <EditTextPreference
+        android:defaultValue="+31612345678"
+        android:inputType="textPersonName"
+        android:key="phone_of_cards"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/phone_of_card" />
+    <EditTextPreference
+        android:defaultValue="10"
+        android:inputType="number"
+        android:key="amount_of_cards"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/person_amount" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_gender_list_titles"
+        android:entryValues="@array/pref_gender_list_values"
+        android:key="gender_card"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/change_card_gender" />
+
+</PreferenceScreen>

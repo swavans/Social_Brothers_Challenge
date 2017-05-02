@@ -3,9 +3,9 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header
-        android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_info_black_24dp"
-        android:title="@string/pref_header_general" />
+        android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$CardPreferenceFragment"
+        android:icon="@drawable/ic_action_card"
+        android:title="@string/title_card" />
 
     <header
         android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$NotificationPreferenceFragment"
