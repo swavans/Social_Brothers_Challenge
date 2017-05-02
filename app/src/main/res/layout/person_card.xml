@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        tools:src="@drawable/dummy"
+        android:layout_alignParentStart="true"
+        android:layout_width="@dimen/card_image_width"
+        android:layout_height="@dimen/card_image_height"
+        android:id="@+id/card_image"
+        android:contentDescription="@string/title_card"/>
+
+    <TextView
+        android:id="@+id/card_name"
+        style="@style/CardTitleText"
+        android:layout_toEndOf="@id/card_image"
+        tools:text="Admini" />
+    <TextView
+        android:id="@+id/card_surname"
+        style="@style/CardSubText"
+        android:layout_alignStart="@id/card_name"
+        android:layout_below="@id/card_name"
+        tools:text="de Beta Tester"
+        />
+    <TextView
+        style="@style/CardSubText"
+        android:id="@+id/card_phone"
+        android:layout_alignStart="@id/card_name"
+        android:layout_below="@id/card_surname"
+        tools:text="+31612345678"
+        />
+</RelativeLayout>
+</android.support.v7.widget.CardView>
