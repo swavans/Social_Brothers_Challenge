@@ -8,9 +8,9 @@
         android:title="@string/title_card" />
 
     <header
-        android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$NotificationPreferenceFragment"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/pref_header_notifications" />
+        android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$ListPreferenceFragment"
+        android:icon="@drawable/ic_action_list"
+        android:title="@string/title_list" />
 
     <header
         android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$DataSyncPreferenceFragment"

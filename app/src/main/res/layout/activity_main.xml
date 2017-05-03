@@ -14,14 +14,13 @@
         layout="@layout/main_toolbar"
         />
 
-
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
+        android:backgroundTint="@color/colorLightGrey"
         app:menu="@menu/navigation" />
 
 

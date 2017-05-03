@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class Bacon extends AsyncTask<String, String, String> {
+public class BaconRetriever extends AsyncTask<String, String, String> {
     private AsyncResponse urlResponse = null;
 
     public void setUrlResponse(AsyncResponse urlResponse) {
