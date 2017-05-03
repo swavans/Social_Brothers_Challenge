@@ -1,11 +1,14 @@
 package com.developer.sascha.social_brothers_challenge.fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +35,7 @@ public class ListFragment extends Fragment implements AsyncResponse, SwipeRefres
     private ArrayList<Bacon> mBaconPieces;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private BaconAdapter mBaconAdapter;
+    private String mOldUrl = null;
     public ListFragment() {
     }
 
@@ -64,9 +68,9 @@ public class ListFragment extends Fragment implements AsyncResponse, SwipeRefres
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        if (mBaconPieces == null) {
+    public void onResume() {
+        super.onResume();
+        if (mBaconPieces == null || !mOldUrl.equals(getBaconUrl())) {
             mSwipeRefreshLayout.setRefreshing(true);
             mBaconAdapter = new BaconAdapter(mBaconPieces);
             mBaconRecycler.setAdapter(mBaconAdapter);
@@ -80,7 +84,22 @@ public class ListFragment extends Fragment implements AsyncResponse, SwipeRefres
     public void getBacon() {
         mBaconRetriever = new BaconRetriever();
         mBaconRetriever.setUrlResponse(this);
-        mBaconRetriever.execute("https://baconipsum.com/api/?type=all-meat");
+        mBaconRetriever.execute(getBaconUrl());
+        getBaconUrl();
+    }
+
+    private String getBaconUrl() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String url = "https://baconipsum.com/api/?type=";
+        url += preferences.getString("meat_type", "all-meat");
+        url += "&paras=" + preferences.getString("bacon_paras", "5");
+        if (!preferences.getBoolean("start_lorem_ipsum", false))
+            url += "&start-with-lorem=" + 0;
+        else
+            url += "&start-with-lorem=" + 1;
+        Log.d("URL", url);
+        mOldUrl = url;
+        return url;
     }
 
     @Override

@@ -12,9 +12,5 @@
         android:icon="@drawable/ic_action_list"
         android:title="@string/title_list" />
 
-    <header
-        android:fragment="com.developer.sascha.social_brothers_challenge.SettingsActivity$DataSyncPreferenceFragment"
-        android:icon="@drawable/ic_sync_black_24dp"
-        android:title="@string/pref_header_data_sync" />
 
 </preference-headers>

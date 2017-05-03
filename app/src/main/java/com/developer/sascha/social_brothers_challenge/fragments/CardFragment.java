@@ -23,13 +23,21 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class CardFragment extends Fragment {
-    PersonAdapter mPersonAdapter;
-
+    private PersonAdapter mPersonAdapter;
+    private String mOldPersonConfig = null;
     public CardFragment() {
 
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!mOldPersonConfig.equals(getPersonConfig())) {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            mPersonAdapter.setPersons(createPersonList(Integer.parseInt(preferences.getString("amount_of_cards", "10"))));
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,9 +56,15 @@ public class CardFragment extends Fragment {
         return rootView;
     }
 
+    public String getPersonConfig() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        return preferences.getString("gender_card", "0") + preferences.getString("name_of_cards", "Admini") + preferences.getString("surname_of_cards", "de Beta Tester") + preferences.getString("phone_of_cards", "+3160000000") + preferences.getString("amount_of_cards", "10");
+    }
+
     public ArrayList<Person> createPersonList(int i) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         ArrayList<Person> persons = new ArrayList<>();
+        mOldPersonConfig = getPersonConfig();
         for (int j = 0; j < i; j++) {
             Person p;
             int number = j + 1;

@@ -19,6 +19,11 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonHolder> {
 
     }
 
+    public void setPersons(ArrayList<Person> persons) {
+        this.persons = persons;
+        notifyDataSetChanged();
+    }
+
     @Override
     public PersonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.person_card, parent, false);
@@ -36,6 +41,9 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonHolder> {
 
     @Override
     public int getItemCount() {
-        return persons.size();
+        if (persons != null) {
+            return persons.size();
+        }
+        return 0;
     }
 }

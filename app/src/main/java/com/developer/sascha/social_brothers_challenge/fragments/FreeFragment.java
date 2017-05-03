@@ -1,13 +1,14 @@
 package com.developer.sascha.social_brothers_challenge.fragments;
 
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.developer.sascha.social_brothers_challenge.R;
+import com.developer.sascha.social_brothers_challenge.opengl.MyGLRenderer;
 
 
 /**
@@ -15,6 +16,7 @@ import com.developer.sascha.social_brothers_challenge.R;
  */
 public class FreeFragment extends Fragment {
 
+    private GLSurfaceView mGLView;
 
     public FreeFragment() {
         // Required empty public constructor
@@ -24,8 +26,10 @@ public class FreeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_free, container, false);
+
+        GLSurfaceView view = new GLSurfaceView(this.getActivity());
+        view.setRenderer(new MyGLRenderer());
+        return view;
     }
 
 }

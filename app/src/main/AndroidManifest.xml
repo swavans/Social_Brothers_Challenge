@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.developer.sascha.social_brothers_challenge">
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
     <uses-permission android:name="android.permission.INTERNET" />"
     <application
         android:allowBackup="true"
