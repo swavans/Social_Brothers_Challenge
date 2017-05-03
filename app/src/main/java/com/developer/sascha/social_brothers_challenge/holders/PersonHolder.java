@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import com.developer.sascha.social_brothers_challenge.R;
 
+/**
+ * Holder Containing the Views for a PersonCard
+ */
 public class PersonHolder extends RecyclerView.ViewHolder {
     private TextView name, surname, phone;
     private ImageView imageView;

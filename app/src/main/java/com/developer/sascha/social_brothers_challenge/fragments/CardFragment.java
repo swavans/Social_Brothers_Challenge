@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A fragment class that fills a recycler view with dummy data
  */
 public class CardFragment extends Fragment {
     private PersonAdapter mPersonAdapter;
@@ -30,6 +30,9 @@ public class CardFragment extends Fragment {
 
     }
 
+    /**
+     * Checks if Data should be updated
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -56,12 +59,20 @@ public class CardFragment extends Fragment {
         return rootView;
     }
 
-    public String getPersonConfig() {
+    /**
+     * @return The Current Configuration of a Person
+     */
+    private String getPersonConfig() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         return preferences.getString("gender_card", "0") + preferences.getString("name_of_cards", "Admini") + preferences.getString("surname_of_cards", "de Beta Tester") + preferences.getString("phone_of_cards", "+3160000000") + preferences.getString("amount_of_cards", "10");
     }
 
-    public ArrayList<Person> createPersonList(int i) {
+    /**
+     *
+     * @param i Amount of Persons you want to create
+     * @return List with Created Persons
+     */
+    private ArrayList<Person> createPersonList(int i) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         ArrayList<Person> persons = new ArrayList<>();
         mOldPersonConfig = getPersonConfig();

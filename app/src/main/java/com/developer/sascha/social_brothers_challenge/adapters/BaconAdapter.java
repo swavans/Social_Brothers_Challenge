@@ -11,10 +11,10 @@ import com.developer.sascha.social_brothers_challenge.holders.BaconHolder;
 
 import java.util.ArrayList;
 
-/**
- * Created by Sascha on 3-5-2017.
- */
 
+/**
+ * This Adapter Connects the Bacon Object to the BaconViewHolder
+ */
 public class BaconAdapter extends RecyclerView.Adapter<BaconHolder> {
 
     private ArrayList<Bacon> mPiecesOfBacon;

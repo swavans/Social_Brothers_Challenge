@@ -26,12 +26,11 @@ import java.util.ArrayList;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment that Contains a RecyclerView filled with Data from the Bacon Ipsum API
  */
 public class ListFragment extends Fragment implements AsyncResponse, SwipeRefreshLayout.OnRefreshListener {
 
     private RecyclerView mBaconRecycler;
-    private BaconRetriever mBaconRetriever;
     private ArrayList<Bacon> mBaconPieces;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private BaconAdapter mBaconAdapter;
@@ -81,13 +80,19 @@ public class ListFragment extends Fragment implements AsyncResponse, SwipeRefres
         }
     }
 
-    public void getBacon() {
-        mBaconRetriever = new BaconRetriever();
+    /**
+     * Starts the Bacon Connector
+     */
+    private void getBacon() {
+        BaconRetriever mBaconRetriever = new BaconRetriever();
         mBaconRetriever.setUrlResponse(this);
         mBaconRetriever.execute(getBaconUrl());
         getBaconUrl();
     }
 
+    /**
+     * @return The correct API URL
+     */
     private String getBaconUrl() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String url = "https://baconipsum.com/api/?type=";
@@ -102,6 +107,9 @@ public class ListFragment extends Fragment implements AsyncResponse, SwipeRefres
         return url;
     }
 
+    /**
+     * Gets new Bacon on Swipe down
+     */
     @Override
     public void onRefresh() {
         getBacon();

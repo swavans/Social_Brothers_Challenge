@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Social Brothers Challenge</string>
+    <string name="change_card_gender">Pas het geslacht aan</string>
+    <string name="drawer_open">Selecteer een Fragment</string>
+    <string name="list_bacon_type">Type Vlees</string>
+    <string name="name_of_card">Voer de naam in</string>
+    <string name="person_amount">Voer het aantal Personen in</string>
+    <string name="phone_of_card">Voer het telefoonnummer in</string>
+    <string name="start_lorem_ipsum">Wil je beginnen met Lorem Ipsum?</string>
+    <string name="surname_of_card">Voer de achternaam in</string>
+    <string name="title_activity_settings">Instellingen</string>
+    <string name="prf_amount_paras">Aantal paragrafen</string>
+</resources>

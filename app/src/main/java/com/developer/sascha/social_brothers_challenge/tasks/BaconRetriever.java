@@ -10,6 +10,11 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+/**
+ * Connects to The Internet with the Supplied URL and Executes a HTTP GET
+ * Returns the Output in JSON
+ * Implement AsyncResponse to acces the data
+ */
 public class BaconRetriever extends AsyncTask<String, String, String> {
     private AsyncResponse urlResponse = null;
 

@@ -11,6 +11,9 @@ import com.developer.sascha.social_brothers_challenge.holders.PersonHolder;
 
 import java.util.ArrayList;
 
+/**
+ * The Person Adapter Binds the Person Object to a PersonHolder combining it with the Person Card
+ */
 public class PersonAdapter extends RecyclerView.Adapter<PersonHolder> {
     private ArrayList<Person> persons;
 

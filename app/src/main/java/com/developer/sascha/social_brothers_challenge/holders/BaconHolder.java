@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.developer.sascha.social_brothers_challenge.R;
 
 /**
- * Created by Sascha on 3-5-2017.
+ *  Simple Holder Containing one Textview
  */
 
 public class BaconHolder extends RecyclerView.ViewHolder {

@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Social Brothers Challenge</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_settings">Settings</string>
     <string name="drawer_open">Select your Fragment</string>
 
 
@@ -27,18 +23,19 @@
         <item>meat-and-filler</item>
     </string-array>
 
-    <string name="title_card">Card View</string>
-    <string name="title_list">List View</string>
-    <string name="title_free">Free View</string>
+    <string name="title_card" translatable="false">Card View</string>
+    <string name="title_list" translatable="false">List View</string>
+    <string name="title_free" translatable="false">Free View</string>
     <string name="person_amount">Set the Amount of Cards</string>
     <string name="change_card_gender">Change the gender</string>
     <string name="name_of_card">Set the name</string>
     <string name="surname_of_card">Set the Surname</string>
-    <string name="phone_of_card">Set the Phonenumber</string>
-    <string name="fake_name">Admini</string>
-    <string name="fake_surname">de Beta Tester</string>
-    <string name="fake_phone">+31612345678</string>
+    <string name="phone_of_card">Set the Phone number</string>
+    <string name="fake_name" translatable="false">Admini</string>
+    <string name="fake_surname" translatable="false">de Beta Tester</string>
+    <string name="fake_phone" translatable="false">+31612345678</string>
     <string name="list_bacon_type">Type of meat</string>
     <string name="start_lorem_ipsum">Start with lorem ipsum?</string>
-    <string name="title_navigation_drawer">Navigation Drawer</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="prf_amount_paras">Amount of Paragraphs</string>
 </resources>

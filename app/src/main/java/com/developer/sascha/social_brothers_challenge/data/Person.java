@@ -2,6 +2,9 @@ package com.developer.sascha.social_brothers_challenge.data;
 
 import android.graphics.Bitmap;
 
+/**
+ * Class To Store Dummy Data so that it can be used later on
+ */
 public class Person {
     private String name, surname, phone;
     private Bitmap image;

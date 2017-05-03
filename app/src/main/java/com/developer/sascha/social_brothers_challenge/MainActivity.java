@@ -17,7 +17,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import com.developer.sascha.social_brothers_challenge.fragments.CardFragment;
 import com.developer.sascha.social_brothers_challenge.fragments.FreeFragment;
@@ -27,15 +26,17 @@ public class MainActivity extends AppCompatActivity {
     private CardFragment mCardFragment = null;
     private ListFragment mListFragment = null;
     private FreeFragment mFreeFragment = null;
-    private TextView mTextMessage;
     private Toolbar  mToolbar;
     private FragmentManager mFragmentManager;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private String mOldTitle;
+    private int mCurrentFragment;
 
-    public void switchFragments(int id) {
+    private void switchFragments(int id) {
+
         mDrawerLayout.closeDrawer(Gravity.START);
+        mCurrentFragment = id;
         switch (id) {
             case R.id.navigation_card:
                 if (mCardFragment == null)
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 mOldTitle = getString(R.string.title_free);
                 break;
         }
-
+        mCurrentFragment = id;
     }
 
     @Override
@@ -105,7 +106,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction().replace(R.id.fragment_container,new CardFragment()).commit();
+        if (savedInstanceState != null) {
+            switchFragments(savedInstanceState.getInt("currentFragment"));
+        } else {
+            mFragmentManager.beginTransaction().replace(R.id.fragment_container, new CardFragment()).commit();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putInt("currentFragment", mCurrentFragment);
     }
 
     @Override

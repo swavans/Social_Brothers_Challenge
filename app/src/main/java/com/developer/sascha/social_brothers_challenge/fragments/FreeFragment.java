@@ -12,11 +12,10 @@ import com.developer.sascha.social_brothers_challenge.opengl.MyGLRenderer;
 
 
 /**
- * A simple {@link Fragment} subclass.
- */
-public class FreeFragment extends Fragment {
+ *  Fragment Containing 9 OpenGL Cubes
+ * */
 
-    private GLSurfaceView mGLView;
+public class FreeFragment extends Fragment {
 
     public FreeFragment() {
         // Required empty public constructor
@@ -26,7 +25,7 @@ public class FreeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //Create a new OpenGL view
         GLSurfaceView view = new GLSurfaceView(this.getActivity());
         view.setRenderer(new MyGLRenderer());
         return view;

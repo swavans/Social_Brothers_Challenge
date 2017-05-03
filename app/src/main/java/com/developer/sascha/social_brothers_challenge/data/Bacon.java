@@ -1,7 +1,7 @@
 package com.developer.sascha.social_brothers_challenge.data;
 
 /**
- * Created by Sascha on 3-5-2017.
+ * Item that holds API Content
  */
 
 public class Bacon {

@@ -8,28 +8,30 @@ import com.developer.sascha.social_brothers_challenge.shapes.Cube;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+/**
+ * Simple OPEN GLRenderer
+ */
 public class MyGLRenderer implements GLSurfaceView.Renderer {
-    private Cube mCube = new Cube();
+    private final Cube mCube = new Cube();
     private float mCubeRotation;
+
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+
+        //BACKGROUND COLOR (WHITE)
         gl.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
+        //Enabling DEPTH
         gl.glClearDepthf(2.0f);
         gl.glEnable(GL10.GL_DEPTH_TEST);
         gl.glDepthFunc(GL10.GL_LEQUAL);
-
-        gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT,
-                GL10.GL_NICEST);
-
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
         gl.glLoadIdentity();
-        gl.glTranslatef(0.0f, 0.0f, 0.0f);
         for (float i = -5.0f; i <= 5; i += 5) {
             for (float j = -5.0f; j <= 5; j += 5) {
                 gl.glPushMatrix();
