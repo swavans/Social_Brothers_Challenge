@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 if (getSupportActionBar() != null && getSupportActionBar().getTitle() != null) {
+                    mToolbar.setNavigationIcon(R.drawable.ic_back_arrow);
                     mOldTitle = getSupportActionBar().getTitle().toString();
                     getSupportActionBar().setTitle(R.string.drawer_open);
                 }
@@ -84,8 +85,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                if (getSupportActionBar() != null)
+
+                if (getSupportActionBar() != null) {
                     getSupportActionBar().setTitle(mOldTitle);
+                    mToolbar.setNavigationIcon(R.drawable.ic_drawer);
+                }
             }
         };
         final BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
         mFragmentManager = getSupportFragmentManager();
         if (savedInstanceState != null) {
             switchFragments(savedInstanceState.getInt("currentFragment"));
