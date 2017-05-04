@@ -11,4 +11,24 @@
     <string name="surname_of_card">Voer de achternaam in</string>
     <string name="title_activity_settings">Instellingen</string>
     <string name="prf_amount_paras">Aantal paragrafen</string>
+    <string-array name="pref_gender_list_titles">
+        <item>Man</item>
+        <item>Vrouw</item>
+    </string-array>
+
+    <string-array name="pref_gender_list_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="pref_bacon_list_titles">
+        <item>Alleen Vlees</item>
+        <item>Vlees en Opvulling</item>
+    </string-array>
+
+    <string-array name="pref_bacon_list_values">
+        <item>all-meat</item>
+        <item>meat-and-filler</item>
+    </string-array>
+
 </resources>
